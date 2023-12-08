@@ -43,6 +43,7 @@ int main()
     find_duplicate(clock, SIZE);
 }
 
+//Функция заполняет массив рандомными значениями 
 void fill_random(Clocks* clock, const int SIZE)
 {
     const int HOUR_BASE = 12;
@@ -57,6 +58,7 @@ void fill_random(Clocks* clock, const int SIZE)
     }
 }
 
+//Функция ищет дубликаты в массиве
 void find_duplicate(Clocks* clock, const int SIZE)
 {
     for (int i = 0; i < SIZE - 1; ++i)
@@ -74,6 +76,7 @@ void find_duplicate(Clocks* clock, const int SIZE)
     }
 }
 
+//Функция алгоритма сравнение в std::sort
 bool compare(Clocks left, Clocks right)
 {
     if (left.bitfield.hour == right.bitfield.hour)
@@ -89,6 +92,7 @@ bool compare(Clocks left, Clocks right)
     return left.bitfield.hour < right.bitfield.hour;
 }
 
+//Функция вывода массива
 void print(Clocks clock)
 {
     cout << clock.bitfield.hour << ':';
