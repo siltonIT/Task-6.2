@@ -38,21 +38,20 @@ Array::~Array() {
 }
 
 void Array::pop_back() {
-	delete _seq[_size];
-	_seq[_size] = nullptr;
 	--_size;
 }
 
 void Array::print() const {
-	for(size_t i = 0; i < _size; ++i)
+	for(size_t i = 0; i < _size; ++i) {
 		_seq[i]->print();
+		std::cout << std::endl;
+	}
 }
 
 void Array::clear() {
-	for(size_t i = 0; i < _capacity; ++i) 
-		delete _seq[i];
+	if(_seq != nullptr)
+		delete[] _seq;
 
-	delete[] _seq;
 	_seq = nullptr;
 	_capacity = 1;
 	_size = 0;
